@@ -1,4 +1,5 @@
 import * as mongoose from 'mongoose';
+import * as bcrypt from 'bcrypt';
 
 
 export const UserSchema = new mongoose.Schema({
@@ -7,4 +8,11 @@ export const UserSchema = new mongoose.Schema({
     password: String,
     id: String
 
+});
+
+UserSchema.pre('save', async function () {
+    /** Encrypt password */
+    const saltOrRounds = 10;
+    console.log('actual',this.password);
+    this.password = await bcrypt.hash(this.password, saltOrRounds);
 });
