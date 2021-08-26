@@ -1,6 +1,7 @@
 import { Model } from 'mongoose';
 import { Injectable, Inject } from '@nestjs/common';
-import { User } from '../users/user.interface'
+import { User } from '../users/user.interface';
+
 // This should be a real class/interface representing a user entity
 
 
@@ -22,5 +23,7 @@ export class UsersService {
   async findOne(userModel): Promise<any> {
     return this.userModel.findOne(userModel).exec();
   }
+
+  
 
 }

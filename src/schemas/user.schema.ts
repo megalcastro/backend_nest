@@ -1,7 +1,6 @@
 import * as mongoose from 'mongoose';
 import * as bcrypt from 'bcrypt';
 
-
 export const UserSchema = new mongoose.Schema({
 
     user: String,
@@ -13,6 +12,5 @@ export const UserSchema = new mongoose.Schema({
 UserSchema.pre('save', async function () {
     /** Encrypt password */
     const saltOrRounds = 10;
-    console.log('actual',this.password);
     this.password = await bcrypt.hash(this.password, saltOrRounds);
 });
