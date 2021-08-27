@@ -3,13 +3,12 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { TerminusModule } from '@nestjs/terminus';
-
-import { MongooseModule } from '@nestjs/mongoose';
 import { HealthController } from './health/health.controller';
 import { FileController } from './file/file.controller';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
-  imports: [MongooseModule.forRoot('mongodb://localhost/dummy'),AuthModule,TerminusModule],
+  imports: [AuthModule,TerminusModule,ConfigModule.forRoot()],
   controllers: [AppController, HealthController, FileController],
   providers: [AppService],
 })
