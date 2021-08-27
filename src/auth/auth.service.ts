@@ -28,10 +28,11 @@ export class AuthService {
 
     async login(user: string, pass: string) {
         let userDb = await this.usersService.findOne({ user });
-        if (bcrypt.compareSync(pass, userDb.password)) {            
-            return { token: this.jwtService.sign({ token:_.omit(userDb,'password') }) };
+
+        if (bcrypt.compareSync(pass, userDb.password)) {
+            return { token: this.jwtService.sign({ token: _.omit(userDb._doc, 'password') }) };
 
         }
         return null;
-       }
+    }
 }
