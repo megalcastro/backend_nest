@@ -6,10 +6,11 @@ import { TerminusModule } from '@nestjs/terminus';
 
 import { MongooseModule } from '@nestjs/mongoose';
 import { HealthController } from './health/health.controller';
+import { FileController } from './file/file.controller';
 
 @Module({
   imports: [MongooseModule.forRoot('mongodb://localhost/dummy'),AuthModule,TerminusModule],
-  controllers: [AppController, HealthController],
+  controllers: [AppController, HealthController, FileController],
   providers: [AppService],
 })
 export class AppModule {}

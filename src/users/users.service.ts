@@ -12,7 +12,7 @@ export class UsersService {
     private userModel: Model<User>,
   ) { }
 
-  async create(data: {}): Promise<any> {
+  async create(data:User): Promise<any> {
     const createdUser = new this.userModel(data);
     return createdUser.save();
   }
