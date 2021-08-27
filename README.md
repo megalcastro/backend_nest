@@ -64,7 +64,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 ## Stay in touch
 
-- Author - [Luis David Castro Coronado](https://kamilmysliwiec.com)
+- Author - [Luis David Castro Coronado]
 - LinkedIn - [LinkedIn](https://www.linkedin.com/in/luis-david-castro-coronado-007154138/)
 
 ## License
