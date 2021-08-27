@@ -9,11 +9,13 @@ async function bootstrap() {
     .setDescription('This document for Api')
     .setVersion('1.0')
     .addTag('example')
+    .setContact('Luis David','wwww.nestJS.com','luisd.ing.pro@gmail.com')
     .build();
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
   app.enableCors();
+  //app.enableShutdownHooks();
   await app.listen(3000);
 }
 bootstrap();
